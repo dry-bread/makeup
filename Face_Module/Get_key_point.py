@@ -1,6 +1,4 @@
-from imutils import face_utils
 import dlib
-import imutils
 import cv2
 import sys
 import numpy as np
