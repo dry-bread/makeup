@@ -1,4 +1,4 @@
-from Get_key_point import face_key_point_classification
+from Face_Module.Get_key_point import face_key_point_classification
 import numpy as np
 import cv2
 import gc

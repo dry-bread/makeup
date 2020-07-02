@@ -1,4 +1,4 @@
-from Get_key_point import face_key_point_classification
+from Face_Module.Get_key_point import face_key_point_classification
 import numpy as np
 import cv2
 import gc
@@ -17,7 +17,8 @@ class lip_make_up_guide(object):
         self.top=min(self.user_keypoints.lips_shape()[:,1])
         self.bottom=max(self.user_keypoints.lips_shape()[:,1])
         self.lip_img=self.user_face[int(self.top):int(self.bottom +1),int(self.left):int(self.right +1)]
-        self.blue=self.blue[int(self.top):int(self.bottom +1),int(self.left):int(self.right +1)]
+        # self.blue=cv2.resize(self.blue,(self.user_face.shape))
+        self.blue=self.blue[0:(int(self.bottom +1)-int(self.top)),0:(int(self.right +1)-int(self.left))]
 
 
     def makeup_guide(self):
